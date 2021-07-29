@@ -1,0 +1,9 @@
+1) select * from albums where artist_id = (select id from artists where name= 'Queen');
+
+2) select count(*) from tracks where media_type_id  = (select id from media_types where name= 'Protected MPEG-4 video file');
+
+3)select name from tracks where genre_id = (select id from genres where name= 'Electronica/Dance') and unit_price= (select min(unit_price)from tracks) order by name  desc limit 1;
+
+4)select * from artists where name like 'A%';
+
+5) select * from tracks where id in (select track_id from playlists_tracks where playlist_id=(select playlists.id from playlists limit 1));
