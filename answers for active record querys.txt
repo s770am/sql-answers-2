@@ -1,0 +1,16 @@
+ 1a)Genre.find_by(name: "Hip Hop/Rap")
+
+1b) Track.where(genre_id: Genre.find_by(name: "Hip Hop/Rap")[:id]).count
+
+2) Track.sum(:milliseconds)
+
+3a)Track.where(media_type_id: MediaType.find_by(name: "MPEG audio file")[:id]).maximum(:unit_price)
+
+3b)Track.where(media_type_id: MediaType.select(:id).where(name: 'MPEG audio file')).maximum(:unit_price)
+
+4)Artist.select(:name).order(:created_at).limit(2)
+
+Stretch 
+
+1
+Album.where("title Like ?", "B%")
